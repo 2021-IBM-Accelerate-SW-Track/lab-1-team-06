@@ -1,3 +1,3 @@
 export default function Header(){
-    return <div class='header'>Today's ToDo List...</div>
+    return <div className='header'>Today's ToDo List...</div>
 }

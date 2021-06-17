@@ -13,7 +13,7 @@ function Task ({ task, index, completedTask }) {  //Gather Task list and Time su
     > 
     {task.text}
     <br/>
-    {task.time = new Date().toLocaleDateString() + ' ' + ' ' + new Date().toLocaleTimeString()}
+    {task.time = new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString()}
     <div> 
      <button onClick={() => completedTask(index)} className= 'check'>✓</button>
      <button onClick={() => ''} className= 'edit'>↻</button> 

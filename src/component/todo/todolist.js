@@ -17,11 +17,11 @@ function ToDoForm({ addTask })
 
         <form onSubmit={handleSubmit}>
  
-        <TextField id="outlined-basic" label="Task" variant="filled" type="text" className="input" 
+        <TextField id="outlined-basic" label="Task" variant="filled" input type="text" className="input" 
         value={value} onChange={e => 
         setValue(e.target.value)}/> 
         
-        <Button variant="contained" type='submit' className='button' style={{background: '#b30000', 
+        <Button variant="contained" button type='submit' className='button' style={{background: '#b30000', 
         color: 'white'}}>
           Add
         </Button>
