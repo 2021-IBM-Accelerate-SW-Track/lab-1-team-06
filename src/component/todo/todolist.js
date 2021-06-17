@@ -16,16 +16,18 @@ function ToDoForm({ addTask })
     return (
 
         <form onSubmit={handleSubmit}>
- 
-        <TextField id="outlined-basic" label="Task" variant="filled" input type="text" className="input" 
+         
+       
+        <TextField id="outlined-basic" label="Task" variant="filled" data-testid="input" className="input" 
         value={value} onChange={e => 
         setValue(e.target.value)}/> 
         
-        <Button variant="contained" button type='submit' className='button' style={{background: '#b30000', 
+        <Button variant="contained" className='button' data-testid="button" style={{background: '#b30000', 
         color: 'white'}}>
           Add
         </Button>
         </form> //Add button to be coded, in order to add tasks to the form
+        
     );
 } 
 
