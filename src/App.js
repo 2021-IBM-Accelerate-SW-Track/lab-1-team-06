@@ -1,3 +1,4 @@
+  
 import React from 'react'
 import Header from "./component/header"
 import './App.css'
@@ -17,7 +18,7 @@ function Task ({ task, index, completedTask }) {  //Gather Task list and Time su
     <div> 
      <button onClick={() => completedTask(index)} className= 'check'>✓</button>
      <button onClick={() => ''} className= 'edit'>↻</button> 
-     <button onClick={() => ''} className= 'delete'>✕</button>
+     <button type="submit" className= 'delete'>✕</button>
     </div>
     </div>
  
@@ -56,24 +57,34 @@ const [tasks, setTasks] = React.useState([
 
     // Add code for the Deleted Task here.
 
+    const deleteTask = text => {
+      const deleteTask = [...tasks, {text}];
+      setTasks(deleteTask);
+    }
+
    // Add Code for the Updated Task Here.
 
   return ( // Allows user interact with the form
-    <div className="App">
-    <Header/>
-    <ToDoList addTask = {addTask}/> 
-      <div className="task-list">
+
+    <div>
+    
+
+      <div className="Task-List">
+      <Header/>
+
+      <ToDoList className="the-list" addTask = {addTask} deleteTask = {deleteTask}/> 
       {tasks.map((task, index) => (
-        <Task
+      <Task className="task"
         key={index}
         index = {index}
         task = {task}
         time = {task.time}
         completedTask = {completedTask}
-       //Add deleted task property here
-        />
+        //Add deleted task property here
+      />
       ))}
     </div>
+
     </div>
   );
 }
