@@ -18,10 +18,10 @@ code {
 }
 
 .task-list {
-  background: #a3a375;
+  background: none;
   border-radius: 5px;
   top: 180px; 
-  left: 420px;
+  left: 418px;
   position: relative;
   max-width: 493px;
   padding: 5px;
@@ -68,12 +68,12 @@ code {
 
 .check{
   top:-33px;
-  left: 170px;
+  left: 173px;
   position: relative;
 }
 
 .edit{
-  top:-35px;  
+  top:-33px;  
   left: 175px;
   position: relative;
 }
