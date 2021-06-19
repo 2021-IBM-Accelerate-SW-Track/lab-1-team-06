@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import FlipMove from "react-flip-move";
+  import FlipMove from "react-flip-move";
 
 class TodoItems extends Component {
     constructor (props) {
@@ -12,9 +12,9 @@ class TodoItems extends Component {
         this.props.delete(key);
     }
 
-    createTasks (item) {
-        return <li onClick={ () => this.delete(item.key) } 
-                            key={item.key}> {item.text} </li>
+    createTasks (item, date) {
+        return <li onClick={ () => this.delete(item.key) }
+                            key={item.key}> {item.text} - {item.date}</li>
     }
     render () {
         var todoEntries = this.props.entries;
