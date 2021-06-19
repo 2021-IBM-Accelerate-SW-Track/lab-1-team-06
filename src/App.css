@@ -65,21 +65,3 @@ code {
 .button:hover{
   background-color: rgb(204, 204, 204);
 }
-
-.check{
-  top:-33px;
-  left: 173px;
-  position: relative;
-}
-
-.edit{
-  top:-33px;  
-  left: 175px;
-  position: relative;
-}
-
-.delete{
-  top:-33px;
-  left: 180px;
-  position: relative;
-}
