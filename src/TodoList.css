@@ -24,7 +24,11 @@
 .todoListMain .theList {
     list-style: none;
     padding-left: 0;
-    width: 250px;
+    width: 500px;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .todoListMain .theList li {
