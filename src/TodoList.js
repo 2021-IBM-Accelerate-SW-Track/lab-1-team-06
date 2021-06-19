@@ -17,15 +17,19 @@ class TodoList extends Component {
     addItem (e) {
 
         var itemArray = this.state.items;
+        var date = new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString()
+
 
         if ( this._inputElement.value !== "" ) {
             itemArray.unshift ({
                 text: this._inputElement.value,
+                date: date,
                 key: Date.now(),
             });
 
         this.setState ({
             items: itemArray,
+            date: itemArray,
         });
 
         this._inputElement.value = "";
@@ -53,7 +57,7 @@ class TodoList extends Component {
             <div className="todoListMain">
                 <div className="header">
                     <form onSubmit={this.addItem}>
-                        <input ref={ (a) => this._inputElement = a } 
+                        <input ref={ (a) => this._inputElement = a }
                         placeholder="enter task">
                         </input>
                         <button type="submit">add</button>
