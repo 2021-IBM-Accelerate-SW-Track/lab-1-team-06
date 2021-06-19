@@ -1,12 +1,17 @@
+import React from 'react'
 import Header from "./component/header"
-import './App.css';
+import './App.css'
+import './component/header/header.css'
+import ToDoForm from './component/todo/todoform'
 
-function App() {
-  return (
+
+function App() { 
+  return ( 
     <div className="App">
-    <Header/>
+    <Header/> 
+    <ToDoForm/>    
     </div>
-  );
+);
 }
 
 export default App;
