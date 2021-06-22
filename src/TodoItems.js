@@ -1,21 +1,56 @@
 import React, { Component } from "react";
-  import FlipMove from "react-flip-move";
+import FlipMove from "react-flip-move";
+import Checkbox from '@material-ui/core/Checkbox';
 
 class TodoItems extends Component {
     constructor (props) {
         super (props);
 
-        this.createTasks = this .createTasks.bind(this);
+        this.state= {
+            checked:false
+        }
+
+        this.createTasks = this.createTasks.bind(this);
+        this.updateItem = this.updateItem.bind(this);
+        this.deleteItem = this.deleteItem.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        
     }
 
-    delete (key) {
-        this.props.delete(key);
+    updateItem(key){
+        this.props.update(key);
     }
 
-    createTasks (item, date) {
-        return <li onClick={ () => this.delete(item.key) }
-                            key={item.key}> {item.text} - {item.date}</li>
+    deleteItem(key) {
+        if(window.confirm("Are you sure you want to delete this task?")){
+            console.log('Task was deleted.');
+            this.props.delete(key);
+        }
+        else {
+            console.log('Task was not deleted.');
+          }
     }
+
+    handleChange (){
+        this.setState({
+            checked:true
+        })
+    }
+    
+
+    createTasks (item) {
+        return <li key={item.key}>
+                    <Checkbox
+                        checked={this.checked}
+                        onChange={this.handleChange}
+                        inputProps={{ 'aria-label': 'primary checkbox' }}
+                    />
+                    {item.text} - {item.date}  
+                    <button onClick={() => this.updateItem(item)}>Update</button> 
+                    <button onClick={() => this.deleteItem(item.key)}>Delete</button>
+                </li>
+    }
+    
     render () {
         var todoEntries = this.props.entries;
         var listItems = todoEntries.map(this.createTasks);
